@@ -1,6 +1,6 @@
 # Discussion 1: All the Rubyists
 
-Due: Thursday June 02, 2020 23:59:59
+Due: Wednesday June 03, 2020 23:59:59
 
 Points: 50P/50SP/0S
 
