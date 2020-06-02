@@ -1,3 +1,5 @@
+# WOW this is a fun class
+# THIS IS A VERY IMPORTANT EDIT
 class Node
   attr_accessor :val, :next_node
 
