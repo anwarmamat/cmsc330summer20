@@ -6,7 +6,7 @@ Points: 100SP
 You will need to implement the following functions in the **src/disc04.ml** file. We have not provided any public tests, so you'll have to write your own tests to make sure that your code works as you expect it to.
 
 ### Submitting
-You will submit this project to [Gradescope](https://www.gradescope.com/).  Click on the "D3" assignment and submit _only_ your **disc4.ml** file in the **src** directory.  Don't zip your solution.  Any files other than **disc04.ml** will be ignored.
+You will submit this project to [Gradescope](https://www.gradescope.com/).  Click on the "disc04" assignment and submit _only_ your **disc4.ml** file in the **src** directory.  Don't zip your solution.  Any files other than **disc04.ml** will be ignored.
 
 ## Part 1: Type Inference Exercises
 
