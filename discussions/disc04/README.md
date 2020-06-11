@@ -1,62 +1,78 @@
-# Discussion 4: Higher Order Functions
-Due: February 23 at 11:59:59 PM Points: 50P/50SP
+# Discussion 3: Introduction to OCaml
 
-You will need to implement the following functions in src/d4.ml. Map and Fold have been implemented for you. Use them to implement all the functions on this assignment.
+Due: Friday, June 11, 2019
+Points: 100SP
 
-## Submitting
-You will submit this project to Gradescope. Click on the "D4" assignment and submit only your **d4.ml** file in the src directory. Don't zip your solution. ***Any files other than d4.ml will be ignored***.
+You will need to implement the following functions in the **src/disc04.ml** file. We have not provided any public tests, so you'll have to write your own tests to make sure that your code works as you expect it to.
 
-# Map And Fold Exercises
+### Submitting
+You will submit this project to [Gradescope](https://www.gradescope.com/).  Click on the "D3" assignment and submit _only_ your **disc4.ml** file in the **src** directory.  Don't zip your solution.  Any files other than **disc04.ml** will be ignored.
+
+## Part 1: Type Inference Exercises
+
+At the top of **src/disc04.ml**, there are a few function definitions. Try determining the types of these functions and check your answers with utop. This portion of the discussion is not tested, but these kinds of exercises may appear on quizzes and exams!
+
+## Part 2: Function Exercises
+
+#### concat str1 str2
+- **Type**: `string -> string -> string`
+- **Description**: Appends `str2` to the end of `str1`.
+- **Examples:**
+```ocaml
+concat "" "" = ""
+concat "" "abc" = "abc"
+concat "xyz" "" = "xyz"
+concat "abc" "xyz" = "abcxyz"
+```
+
+#### add_to_float integer flt
+- **Type**: `int -> float -> float`
+- **Description**: Adds `integer` and `flt` and returns a float representation of the sum.
+- **Examples:**
+```ocaml
+add_to_float 3 4.8 = 7.8
+add_to_float 0 0.0 = 0.0
+```
+
+#### fib n
+- **Type**: `int -> int`
+- **Description**: Calculates the nth [Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_number).
+- **Examples:**
+```ocaml
+fib 0 = 0
+fib 1 = 1
+fib 2 = 1
+fib 3 = 2
+fib 6 = 8
+```
+
+## Part 3: List and Tuple Exercisees
+
 #### add_three lst
-- **Type:** `int list -> int list`
-- **Description:** Return a list containing the integers in lst increased by 3.
+- **Type**: `int list -> int list`
+- **Description**: Adds 3 to each element in `lst`
 - **Examples:**
 ```ocaml
-    add_three [0] = [3];;
-    add_three [4; 5; 6] = [7; 8; 9];;
-    add_three [] = [];;
- ```
+add_three [] = []
+add_three [1] = [4]
+add_three [1; 3; 5] = [4; 6; 8]
+```
 
-#### build_sentence lst
-- **Type:** `string list -> string`
-- **Description:** Build a sentence from a list of strings by concatenating the strings from left to right.  You do not have to add spaces between the words, they will be included already.
+#### filter f lst
+- **Type**: `('a -> bool) -> 'a list -> 'a list`
+- **Description**: Given a function `f` and a list `lst`, Remove elements from `lst` that do not return true when passed into `f`.
 - **Examples:**
 ```ocaml
-    build_sentence [] = [];;
-    build_sentence ["How"] = "How";;
-    build_sentence ["How"; " are"; " you?"] = "How are you?";;
- ```
+filter (fun a -> a = 3) [1; 2; 3; 3; 2; 1] = [3; 3]
+filter (fun a -> a mod 2 = 0) [1; 2; 3; 4] = [2; 4]
+```
 
-#### sum_assoc lst
-- **Type:** `int list -> (int * int) list`
-- **Description:** Associate every element in the list with the total sum of all the elements in the list.
+#### zip lst1 lst2
+- **Type**: `float list -> float list -> (float * float) list`
+- **Description**: Given two lists of floats, `lst1` and `lst2`, return a list of tuples each containing two floats, one from the corresponding index of either list.
+- **Assumptions**: `lst1` and `lst2` are the same length.
 - **Examples:**
 ```ocaml
-    sum_assoc [] = [];;
-    sum_assoc [6] = [(6, 6)];;
-    sum_assoc [5; 6; 7] = [(5, 18); (6, 18); (7, 18)];;
- ```
-
-#### squared_sum lst
-- **Type:** `int list -> int`
-- **Description:** Return the sum of the square of every integer in the list.
-- **Examples:**
-```ocaml
-    squared_sum [] = 0;;
-    squared_sum [4; 5] = 41;;
- ```
-
-#### evaluate lst v
-- **Type:** `(int -> int) list -> int -> int`
-- **Description:** You are given a list of one argument functions to be composed from right to left i.e the last function should be treated as the innermost function. v is the input to the innermost function. Return the result of the function composition.
-- **Examples:**
-```ocaml
-    evaluate [] 27 = 27;;
-    evaluate [(fun x -> x + 1); (fun y -> y * 4)] 5 = 21;;
-    evaluate [
-      (fun a -> a + 3);
-      (fun b -> 3 - b);
-      (fun c -> 2 + c);
-      (fun d -> 2 - d)
-    ] 0 = 2;;
- ```
+zip [] [] = []
+zip [1.0; 2.0] [3.0; 4.0] = [(1.0, 3.0); (2.0, 4.0)]
+```
