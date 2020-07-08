@@ -19,7 +19,7 @@ but `a b` will be lexed as `[Tok_Var "a"; Tok_Var "b"; Tok_EOF]`.
 
 You are only required to implement the following four functions.
 However, you will surely write several other helper functions.
-You may use the [lexer and parser examples](https://github.com/anwarmamat/cmsc330summer19-public/tree/master/notes/cfgs)
+You may use the [lexer and parser examples](https://github.com/anwarmamat/cmsc330/tree/master/ocaml/parser_class_example)
 given in class as a guide.
 
 * `lex : string -> token list`
