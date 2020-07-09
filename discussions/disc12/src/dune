@@ -1,0 +1,3 @@
+(library
+  (name d11)
+  (libraries str disc))
