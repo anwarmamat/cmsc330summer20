@@ -1,5 +1,6 @@
 # Discussion 12: NanOCaml Semantics
 
+
 ## Introduction
 
 We are implementing a stripped down version of OCaml called NanOCaml.
@@ -38,7 +39,7 @@ When we apply an argument to the function, we substitute it in for
 
 To explicitize it in semantics we will be following these semantics. 
 
-> ![sem](imgs/sem.png)
+> ![CFG](imgs/sem.png)
 
 Similar to OCaml, NanOCaml use closures to keep track of the variables that have been bound. 
 To represent this in our program we use the following types
