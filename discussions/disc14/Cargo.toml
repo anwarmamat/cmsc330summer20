@@ -1,0 +1,6 @@
+[package]
+name = "Discussion14"
+version = "1.0.0"
+edition = "2018"
+authors = ["Anwar Mamat <anwar@cs.umd.edu>"]
+description = "CMSC330 Summer 2020 Discussion 14"
